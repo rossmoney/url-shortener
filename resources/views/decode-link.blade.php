@@ -12,7 +12,7 @@
         @csrf
         <label for="url">Enter URL:</label>
         <input type="text" name="url" id="url" required>
-        <button type="submit">Shorten URL</button>
+        <button type="submit">Expand URL</button>
     </form>
 </body>
 </html>
