@@ -1,5 +1,9 @@
 # URL Shortener
 
+## Brief
+
+Create a URL shortening service where you enter a URL such as https://www.thisisalongdomain.com/with/some/parameters?and=here_too and it returns a short URL such as http://short.est/GeAi9K.
+
 ## Starting the project
 Copy .env.example to .env
 > cp .env.example .env
