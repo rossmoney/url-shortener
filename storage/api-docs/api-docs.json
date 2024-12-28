@@ -1,0 +1,116 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "URL Shortener",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/encode": {
+            "post": {
+                "tags": [
+                    "Link"
+                ],
+                "summary": "Encode a URL into a short form",
+                "operationId": "a1f3036a9e9be9170a4daae455108f90",
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "description": "URL to shorten",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid request"
+                    }
+                }
+            }
+        },
+        "/api/decode": {
+            "post": {
+                "tags": [
+                    "Link"
+                ],
+                "summary": "Decode a shortened URL into the original",
+                "operationId": "1db21bb5769ba3a33cbceae09681ba68",
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "description": "Short url (http://short.est/e58h6j)",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid request"
+                    },
+                    "404": {
+                        "description": "URL Not Found!"
+                    }
+                }
+            }
+        },
+        "/api/links": {
+            "get": {
+                "tags": [
+                    "Link"
+                ],
+                "summary": "Return all stored links",
+                "operationId": "d78a8b6681ba04233d4e3126cb161cf8",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/api/links/{id}": {
+            "get": {
+                "tags": [
+                    "Link"
+                ],
+                "summary": "Return a single stored link by ID",
+                "operationId": "e701f82bacf9f5ffef51c0f93fe80781",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of URL to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "404": {
+                        "description": "ID not found"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Link",
+            "description": "Link"
+        }
+    ]
+}
